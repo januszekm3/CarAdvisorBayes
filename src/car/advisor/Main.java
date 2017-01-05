@@ -21,6 +21,8 @@ public class Main {
 		userPrefs.setNiskieKosztyEksploatacjiDef(new double[] { 0.5, 0.5 });
 		userPrefs.setDuzyZasiegDef(new double[] { 0.7, 0.3 });
 		userPrefs.setTypSilnikaDef(new double[] { 0.2, 0.5, 0.3 });
+		userPrefs.setBagaznikDef(new double[] { 0.8, 0.1, 0.1 });
+		userPrefs.setWysokieOsiagiDef(new double[] { 0.3, 0.7 });
 		return userPrefs;
 	}
 

@@ -11,7 +11,8 @@ import car.advisor.model.UserPreferences;
 
 public class CarAdvisorNetwork {
 
-	private List<String> models = Arrays.asList("Skoda_Citigo", "Audi_Q5");
+	private List<String> models = Arrays.asList("Skoda_Citigo", "Audi_Q5",
+			"Ford_Focus_ST", "Lexus_CT_200H");
 
 	private Network net;
 
@@ -81,6 +82,19 @@ public class CarAdvisorNetwork {
 		net.addOutcome("Typ_Silnika", "hybryda");
 		net.deleteOutcome("Typ_Silnika", 0);
 		net.deleteOutcome("Typ_Silnika", 0);
+
+		net.addNode(Network.NodeType.Cpt, "Bagaznik");
+		net.addOutcome("Bagaznik", "maly");
+		net.addOutcome("Bagaznik", "praktyczny");
+		net.addOutcome("Bagaznik", "obszerny");
+		net.deleteOutcome("Bagaznik", 0);
+		net.deleteOutcome("Bagaznik", 0);
+
+		net.addNode(Network.NodeType.Cpt, "Wysokie_Osiagi");
+		net.addOutcome("Wysokie_Osiagi", "tak");
+		net.addOutcome("Wysokie_Osiagi", "nie");
+		net.deleteOutcome("Wysokie_Osiagi", 0);
+		net.deleteOutcome("Wysokie_Osiagi", 0);
 	}
 
 	private void createIntermediateNodes() {
@@ -134,6 +148,112 @@ public class CarAdvisorNetwork {
 				0.5, 0.5 };
 
 		net.setNodeDefinition("Krotkie_Dojazdy", krotkieDojazdyDef);
+
+		net.addNode(Network.NodeType.Cpt, "Rodzinne");
+		net.addOutcome("Rodzinne", "tak");
+		net.addOutcome("Rodzinne", "nie");
+		net.deleteOutcome("Rodzinne", 0);
+		net.deleteOutcome("Rodzinne", 0);
+
+		net.addArc("Liczba_Miejsc", "Rodzinne");
+		net.addArc("Komfort_Jazdy", "Rodzinne");
+		net.addArc("Bagaznik", "Rodzinne");
+
+		double[] rodzinneDef = { 0.5, 0.5, /**/0.6, 0.4, /**/0.4, 0.6, /**/
+		0.5, 0.5, /**/0.7, 0.3, /**/0.5, 0.5, /**/
+		0.5, 0.5, /**/0.6, 0.4, /**/0.4, 0.6, /**/
+		0.5, 0.5, /**/0.7, 0.3, /**/0.5, 0.5, /**/
+		0.5, 0.5, /**/0.6, 0.4, /**/0.4, 0.6, /**/
+		0.5, 0.5, /**/0.7, 0.3, /**/0.5, 0.5 };
+
+		net.setNodeDefinition("Rodzinne", rodzinneDef);
+
+		net.addNode(Network.NodeType.Cpt, "Studencki_Standard");
+		net.addOutcome("Studencki_Standard", "tak");
+		net.addOutcome("Studencki_Standard", "nie");
+		net.deleteOutcome("Studencki_Standard", 0);
+		net.deleteOutcome("Studencki_Standard", 0);
+
+		net.addArc("Komfort_Jazdy", "Studencki_Standard");
+		net.addArc("Bogate_Wyposazenie", "Studencki_Standard");
+		net.addArc("Wysokie_Osiagi", "Studencki_Standard");
+
+		double[] studenckiStandardDef = { 0.2, 0.8, //
+				0.4, 0.6, //
+				0.5, 0.5, //
+				0.5, 0.5, //
+				0.3, 0.7, //
+				0.9, 0.1, //
+				0.8, 0.2, //
+				0.6, 0.4 };
+
+		net.setNodeDefinition("Studencki_Standard", studenckiStandardDef);
+
+		net.addNode(Network.NodeType.Cpt, "Zazdrosc_Sasiadow");
+		net.addOutcome("Zazdrosc_Sasiadow", "tak");
+		net.addOutcome("Zazdrosc_Sasiadow", "nie");
+		net.deleteOutcome("Zazdrosc_Sasiadow", 0);
+		net.deleteOutcome("Zazdrosc_Sasiadow", 0);
+
+		net.addArc("Bogate_Wyposazenie", "Zazdrosc_Sasiadow");
+		net.addArc("Wysokie_Osiagi", "Zazdrosc_Sasiadow");
+
+		double[] zazdroscSasiadowDef = { 0.2, 0.8, //
+				0.4, 0.6, //
+				0.6, 0.4, //
+				0.7, 0.3 };
+
+		net.setNodeDefinition("Zazdrosc_Sasiadow", zazdroscSasiadowDef);
+
+		net.addNode(Network.NodeType.Cpt, "Szybka_Bestia");
+		net.addOutcome("Szybka_Bestia", "tak");
+		net.addOutcome("Szybka_Bestia", "nie");
+		net.deleteOutcome("Szybka_Bestia", 0);
+		net.deleteOutcome("Szybka_Bestia", 0);
+
+		net.addArc("Wysokie_Osiagi", "Szybka_Bestia");
+		net.addArc("Niskie_Koszty_Eksploatacji", "Szybka_Bestia");
+
+		double[] szybkaBestiaDef = { 0.1, 0.9, //
+				0.7, 0.3, //
+				0.5, 0.5, //
+				0.5, 0.5 };
+
+		net.setNodeDefinition("Szybka_Bestia", szybkaBestiaDef);
+
+		net.addNode(Network.NodeType.Cpt, "Dlugodystansowiec");
+		net.addOutcome("Dlugodystansowiec", "tak");
+		net.addOutcome("Dlugodystansowiec", "nie");
+		net.deleteOutcome("Dlugodystansowiec", 0);
+		net.deleteOutcome("Dlugodystansowiec", 0);
+
+		net.addArc("Niskie_Koszty_Eksploatacji", "Dlugodystansowiec");
+		net.addArc("Duzy_Zasieg", "Dlugodystansowiec");
+
+		double[] dlugodystansowiecDef = { 0.1, 0.9, //
+				0.3, 0.7, //
+				0.9, 0.1, //
+				0.4, 0.6 };
+
+		net.setNodeDefinition("Dlugodystansowiec", dlugodystansowiecDef);
+
+		net.addNode(Network.NodeType.Cpt, "Eko");
+		net.addOutcome("Eko", "tak");
+		net.addOutcome("Eko", "nie");
+		net.deleteOutcome("Eko", 0);
+		net.deleteOutcome("Eko", 0);
+
+		net.addArc("Dlugodystansowiec", "Eko");
+		net.addArc("Typ_Silnika", "Eko");
+
+		double[] ekoDef = { 0.6, 0.4, //
+				0.6, 0.4, //
+				0.8, 0.2, //
+				0.4, 0.6, //
+				0.2, 0.8, //
+				0.1, 0.9 };
+
+		net.setNodeDefinition("Eko", ekoDef);
 	}
 
 	private void createModelNodes() {
@@ -152,15 +272,19 @@ public class CarAdvisorNetwork {
 
 		// kolejne wiersze oddzielone /**/ jako ze jest duzo wartosci nie
 		// wypisalem tego pionowo
-		double[] skodaCitigoDef = { 0.3, 0.7, /**/0.6, 0.4, /**/0.1, 0.9, /**/
-		0.5, 0.5, /**/0.8, 0.2, /**/0.4, 0.6, /**/0.9, 0.1, /**/
-		0.2, 0.8, /**/0.4, 0.6, /**/0.3, 0.7, /**/0.6, 0.4, /**/0.1, 0.9, /**/
-		0.5, 0.5, /**/0.8, 0.2, /**/0.4, 0.6, /**/0.9, 0.1, /**/
-		0.2, 0.8, /**/0.4, 0.6, /**/0.3, 0.7, /**/0.6, 0.4, /**/0.1, 0.9, /**/
-		0.5, 0.5, /**/0.8, 0.2, /**/0.4, 0.6, /**/0.9, 0.1, /**/
-		0.2, 0.8, /**/0.4, 0.6, /**/0.3, 0.7, /**/0.6, 0.4, /**/0.1, 0.9, /**/
-		0.5, 0.5, /**/0.8, 0.2, /**/0.4, 0.6, /**/0.9, 0.1, /**/
-		0.2, 0.8, /**/0.4, 0.6 };
+		double[] skodaCitigoDef = { /**/
+		0.3, 0.7, /**/0.6, 0.4, /**/0.1, 0.9, /**/
+		0.5, 0.5, /**/0.8, 0.2, /**/0.4, 0.6, /**/
+		0.9, 0.1, /**/0.2, 0.8, /**/0.4, 0.6, /**/
+		0.3, 0.7, /**/0.6, 0.4, /**/0.1, 0.9, /**/
+		0.5, 0.5, /**/0.8, 0.2, /**/0.4, 0.6, /**/
+		0.9, 0.1, /**/0.2, 0.8, /**/0.4, 0.6, /**/
+		0.3, 0.7, /**/0.6, 0.4, /**/0.1, 0.9, /**/
+		0.5, 0.5, /**/0.8, 0.2, /**/0.4, 0.6, /**/
+		0.9, 0.1, /**/0.2, 0.8, /**/0.4, 0.6, /**/
+		0.3, 0.7, /**/0.6, 0.4, /**/0.1, 0.9, /**/
+		0.5, 0.5, /**/0.8, 0.2, /**/0.4, 0.6, /**/
+		0.9, 0.1, /**/0.2, 0.8, /**/0.4, 0.6 };
 
 		net.setNodeDefinition("Skoda_Citigo", skodaCitigoDef);
 
@@ -175,17 +299,76 @@ public class CarAdvisorNetwork {
 		net.addArc("Bogate_Wyposazenie", "Audi_Q5");
 		net.addArc("Przeznaczenie", "Audi_Q5");
 
-		double[] audiQ5Def = { 0.5, 0.5, /**/0.3, 0.7, /**/0.9, 0.1, /**/
-		0.2, 0.8, /**/0.8, 0.2, /**/0.4, 0.6, /**/0.7, 0.3, /**/0.5, 0.5, /**/
-		0.4, 0.6, /**/0.5, 0.5, /**/0.3, 0.7, /**/0.9, 0.1, /**/
-		0.2, 0.8, /**/0.8, 0.2, /**/0.4, 0.6, /**/0.7, 0.3, /**/0.5, 0.5, /**/
-		0.4, 0.6, /**/0.5, 0.5, /**/0.3, 0.7, /**/0.9, 0.1, /**/
-		0.2, 0.8, /**/0.8, 0.2, /**/0.4, 0.6, /**/0.7, 0.3, /**/0.5, 0.5, /**/
-		0.4, 0.6, /**/0.5, 0.5, /**/0.3, 0.7, /**/0.9, 0.1, /**/
-		0.2, 0.8, /**/0.8, 0.2, /**/0.4, 0.6, /**/0.7, 0.3, /**/0.5, 0.5, /**/
-		0.4, 0.6 };
+		double[] audiQ5Def = { /**/
+		0.5, 0.5, /**/0.3, 0.7, /**/0.9, 0.1, /**/
+		0.2, 0.8, /**/0.8, 0.2, /**/0.4, 0.6, /**/
+		0.7, 0.3, /**/0.5, 0.5, /**/0.4, 0.6, /**/
+		0.5, 0.5, /**/0.3, 0.7, /**/0.9, 0.1, /**/
+		0.2, 0.8, /**/0.8, 0.2, /**/0.4, 0.6, /**/
+		0.7, 0.3, /**/0.5, 0.5, /**/0.4, 0.6, /**/
+		0.5, 0.5, /**/0.3, 0.7, /**/0.9, 0.1, /**/
+		0.2, 0.8, /**/0.8, 0.2, /**/0.4, 0.6, /**/
+		0.7, 0.3, /**/0.5, 0.5, /**/0.4, 0.6, /**/
+		0.5, 0.5, /**/0.3, 0.7, /**/0.9, 0.1, /**/
+		0.2, 0.8, /**/0.8, 0.2, /**/0.4, 0.6, /**/
+		0.7, 0.3, /**/0.5, 0.5, /**/0.4, 0.6 };
 
 		net.setNodeDefinition("Audi_Q5", audiQ5Def);
+
+		net.addNode(Network.NodeType.Cpt, "Ford_Focus_ST");
+		net.addOutcome("Ford_Focus_ST", "tak");
+		net.addOutcome("Ford_Focus_ST", "nie");
+		net.deleteOutcome("Ford_Focus_ST", 0);
+		net.deleteOutcome("Ford_Focus_ST", 0);
+
+		net.addArc("Cena", "Ford_Focus_ST");
+		net.addArc("Szybka_Bestia", "Ford_Focus_ST");
+		net.addArc("Typ_Silnika", "Ford_Focus_ST");
+		net.addArc("Dlugodystansowiec", "Ford_Focus_ST");
+
+		double[] fordFocusSTDef = { /**/
+		0.9, 0.1, /**/0.6, 0.4, /**/0.2, 0.8, /**/
+		0.5, 0.5, /**/0.3, 0.7, /**/0.4, 0.6, /**/
+		0.9, 0.1, /**/0.6, 0.4, /**/0.2, 0.8, /**/
+		0.5, 0.5, /**/0.3, 0.7, /**/0.4, 0.6, /**/
+		0.9, 0.1, /**/0.6, 0.4, /**/0.2, 0.8, /**/
+		0.5, 0.5, /**/0.3, 0.7, /**/0.4, 0.6, /**/
+		0.9, 0.1, /**/0.6, 0.4, /**/0.2, 0.8, /**/
+		0.5, 0.5, /**/0.3, 0.7, /**/0.4, 0.6, /**/
+		0.9, 0.1, /**/0.6, 0.4, /**/0.2, 0.8, /**/
+		0.5, 0.5, /**/0.3, 0.7, /**/0.4, 0.6, /**/
+		0.9, 0.1, /**/0.6, 0.4, /**/0.2, 0.8, /**/
+		0.5, 0.5, /**/0.3, 0.7, /**/0.4, 0.6, /**/};
+
+		net.setNodeDefinition("Ford_Focus_ST", fordFocusSTDef);
+
+		net.addNode(Network.NodeType.Cpt, "Lexus_CT_200H");
+		net.addOutcome("Lexus_CT_200H", "tak");
+		net.addOutcome("Lexus_CT_200H", "nie");
+		net.deleteOutcome("Lexus_CT_200H", 0);
+		net.deleteOutcome("Lexus_CT_200H", 0);
+
+		net.addArc("Cena", "Lexus_CT_200H");
+		net.addArc("Bogate_Wyposazenie", "Lexus_CT_200H");
+		net.addArc("Bagaznik", "Lexus_CT_200H");
+		net.addArc("Eko", "Lexus_CT_200H");
+
+		double[] lexusCT200HDef = { /**/
+		0.6, 0.4, /**/0.6, 0.4, /**/0.1, 0.9, /**/
+		0.8, 0.2, /**/0.7, 0.3, /**/0.2, 0.8, /**/
+		0.6, 0.4, /**/0.6, 0.4, /**/0.1, 0.9, /**/
+		0.8, 0.2, /**/0.7, 0.3, /**/0.2, 0.8, /**/
+		0.6, 0.4, /**/0.6, 0.4, /**/0.1, 0.9, /**/
+		0.8, 0.2, /**/0.7, 0.3, /**/0.2, 0.8, /**/
+		0.6, 0.4, /**/0.6, 0.4, /**/0.1, 0.9, /**/
+		0.8, 0.2, /**/0.7, 0.3, /**/0.2, 0.8, /**/
+		0.6, 0.4, /**/0.6, 0.4, /**/0.1, 0.9, /**/
+		0.8, 0.2, /**/0.7, 0.3, /**/0.2, 0.8, /**/
+		0.6, 0.4, /**/0.6, 0.4, /**/0.1, 0.9, /**/
+		0.8, 0.2, /**/0.7, 0.3, /**/0.2, 0.8, /**/
+		};
+
+		net.setNodeDefinition("Lexus_CT_200H", lexusCT200HDef);
 	}
 
 	public String getBestMatches(UserPreferences userPrefs) {
@@ -224,6 +407,8 @@ public class CarAdvisorNetwork {
 				userPrefs.getNiskieKosztyEksploatacjiDef());
 		net.setNodeDefinition("Duzy_Zasieg", userPrefs.getDuzyZasiegDef());
 		net.setNodeDefinition("Typ_Silnika", userPrefs.getTypSilnikaDef());
+		net.setNodeDefinition("Bagaznik", userPrefs.getBagaznikDef());
+		net.setNodeDefinition("Wysokie_Osiagi", userPrefs.getWysokieOsiagiDef());
 		net.updateBeliefs();
 	}
 

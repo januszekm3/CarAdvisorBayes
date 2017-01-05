@@ -18,6 +18,10 @@ public class UserPreferences {
 
 	private double[] typSilnikaDef;
 
+	private double[] bagaznikDef;
+
+	private double[] wysokieOsiagiDef;
+
 	public double[] getCenaDef() {
 		return cenaDef;
 	}
@@ -81,6 +85,22 @@ public class UserPreferences {
 
 	public void setTypSilnikaDef(double[] typSilnikaDef) {
 		this.typSilnikaDef = typSilnikaDef;
+	}
+
+	public double[] getBagaznikDef() {
+		return bagaznikDef;
+	}
+
+	public void setBagaznikDef(double[] bagaznikDef) {
+		this.bagaznikDef = bagaznikDef;
+	}
+
+	public double[] getWysokieOsiagiDef() {
+		return wysokieOsiagiDef;
+	}
+
+	public void setWysokieOsiagiDef(double[] wysokieOsiagiDef) {
+		this.wysokieOsiagiDef = wysokieOsiagiDef;
 	}
 
 }
