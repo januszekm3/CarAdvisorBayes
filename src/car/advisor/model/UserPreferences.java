@@ -2,105 +2,104 @@ package car.advisor.model;
 
 public class UserPreferences {
 
-	private double[] cenaDef;
+	private double[] cena;
 
-	private double[] komfortJazdyDef;
+	private double[] komfortJazdy;
 
-	private double[] bogateWyposazenieDef;
+	private double[] bogateWyposazenie;
 
-	private double[] przeznaczenieDef;
+	private double[] przeznaczenie;
 
-	private double[] liczbaMiejscDef;
+	private double[] liczbaMiejsc;
 
-	private double[] niskieKosztyEksploatacjiDef;
+	private double[] niskieKosztyEksploatacji;
 
-	private double[] duzyZasiegDef;
+	private double[] duzyZasieg;
 
-	private double[] typSilnikaDef;
+	private double[] typSilnika;
 
-	private double[] bagaznikDef;
+	private double[] bagaznik;
 
-	private double[] wysokieOsiagiDef;
+	private double[] wysokieOsiagi;
 
-	public double[] getCenaDef() {
-		return cenaDef;
+	public double[] getCena() {
+		return cena;
 	}
 
-	public void setCenaDef(double[] cenaDef) {
-		this.cenaDef = cenaDef;
+	public void setCena(double[] cena) {
+		this.cena = cena;
 	}
 
-	public double[] getKomfortJazdyDef() {
-		return komfortJazdyDef;
+	public double[] getKomfortJazdy() {
+		return komfortJazdy;
 	}
 
-	public void setKomfortJazdyDef(double[] komfortJazdyDef) {
-		this.komfortJazdyDef = komfortJazdyDef;
+	public void setKomfortJazdy(double[] komfortJazdy) {
+		this.komfortJazdy = komfortJazdy;
 	}
 
-	public double[] getBogateWyposazenieDef() {
-		return bogateWyposazenieDef;
+	public double[] getBogateWyposazenie() {
+		return bogateWyposazenie;
 	}
 
-	public void setBogateWyposazenieDef(double[] bogateWyposazenieDef) {
-		this.bogateWyposazenieDef = bogateWyposazenieDef;
+	public void setBogateWyposazenie(double[] bogateWyposazenie) {
+		this.bogateWyposazenie = bogateWyposazenie;
 	}
 
-	public double[] getPrzeznaczenieDef() {
-		return przeznaczenieDef;
+	public double[] getPrzeznaczenie() {
+		return przeznaczenie;
 	}
 
-	public void setPrzeznaczenieDef(double[] przeznaczenieDef) {
-		this.przeznaczenieDef = przeznaczenieDef;
+	public void setPrzeznaczenie(double[] przeznaczenie) {
+		this.przeznaczenie = przeznaczenie;
 	}
 
-	public double[] getLiczbaMiejscDef() {
-		return liczbaMiejscDef;
+	public double[] getLiczbaMiejsc() {
+		return liczbaMiejsc;
 	}
 
-	public void setLiczbaMiejscDef(double[] liczbaMiejscDef) {
-		this.liczbaMiejscDef = liczbaMiejscDef;
+	public void setLiczbaMiejsc(double[] liczbaMiejsc) {
+		this.liczbaMiejsc = liczbaMiejsc;
 	}
 
-	public double[] getNiskieKosztyEksploatacjiDef() {
-		return niskieKosztyEksploatacjiDef;
+	public double[] getNiskieKosztyEksploatacji() {
+		return niskieKosztyEksploatacji;
 	}
 
-	public void setNiskieKosztyEksploatacjiDef(
-			double[] niskieKosztyEksploatacjiDef) {
-		this.niskieKosztyEksploatacjiDef = niskieKosztyEksploatacjiDef;
+	public void setNiskieKosztyEksploatacji(
+			double[] niskieKosztyEksploatacji) {
+		this.niskieKosztyEksploatacji = niskieKosztyEksploatacji;
 	}
 
-	public double[] getDuzyZasiegDef() {
-		return duzyZasiegDef;
+	public double[] getDuzyZasieg() {
+		return duzyZasieg;
 	}
 
-	public void setDuzyZasiegDef(double[] duzyZasiegDef) {
-		this.duzyZasiegDef = duzyZasiegDef;
+	public void setDuzyZasieg(double[] duzyZasieg) {
+		this.duzyZasieg = duzyZasieg;
 	}
 
-	public double[] getTypSilnikaDef() {
-		return typSilnikaDef;
+	public double[] getTypSilnika() {
+		return typSilnika;
 	}
 
-	public void setTypSilnikaDef(double[] typSilnikaDef) {
-		this.typSilnikaDef = typSilnikaDef;
+	public void setTypSilnika(double[] typSilnika) {
+		this.typSilnika = typSilnika;
 	}
 
-	public double[] getBagaznikDef() {
-		return bagaznikDef;
+	public double[] getBagaznik() {
+		return bagaznik;
 	}
 
-	public void setBagaznikDef(double[] bagaznikDef) {
-		this.bagaznikDef = bagaznikDef;
+	public void setBagaznik(double[] bagaznik) {
+		this.bagaznik = bagaznik;
 	}
 
-	public double[] getWysokieOsiagiDef() {
-		return wysokieOsiagiDef;
+	public double[] getWysokieOsiagi() {
+		return wysokieOsiagi;
 	}
 
-	public void setWysokieOsiagiDef(double[] wysokieOsiagiDef) {
-		this.wysokieOsiagiDef = wysokieOsiagiDef;
+	public void setWysokieOsiagi(double[] wysokieOsiagi) {
+		this.wysokieOsiagi = wysokieOsiagi;
 	}
-
 }

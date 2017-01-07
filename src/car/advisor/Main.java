@@ -13,16 +13,16 @@ public class Main {
 	private static UserPreferences createUserPreferences() {
 		// Zahardkodowane tymczasowo, do wyciagniecia z guia
 		UserPreferences userPrefs = new UserPreferences();
-		userPrefs.setCenaDef(new double[] { 0.2, 0.3, 0.5 });
-		userPrefs.setKomfortJazdyDef(new double[] { 0.4, 0.6 });
-		userPrefs.setBogateWyposazenieDef(new double[] { 0.9, 0.1 });
-		userPrefs.setPrzeznaczenieDef(new double[] { 0.3, 0.5, 0.2 });
-		userPrefs.setLiczbaMiejscDef(new double[] { 0.6, 0.1, 0.3 });
-		userPrefs.setNiskieKosztyEksploatacjiDef(new double[] { 0.5, 0.5 });
-		userPrefs.setDuzyZasiegDef(new double[] { 0.7, 0.3 });
-		userPrefs.setTypSilnikaDef(new double[] { 0.2, 0.5, 0.3 });
-		userPrefs.setBagaznikDef(new double[] { 0.8, 0.1, 0.1 });
-		userPrefs.setWysokieOsiagiDef(new double[] { 0.3, 0.7 });
+		userPrefs.setCena(new double[] { 0.2, 0.3, 0.5 });
+		userPrefs.setKomfortJazdy(new double[] { 0.4, 0.6 });
+		userPrefs.setBogateWyposazenie(new double[] { 0.9, 0.1 });
+		userPrefs.setPrzeznaczenie(new double[] { 0.3, 0.5, 0.2 });
+		userPrefs.setLiczbaMiejsc(new double[] { 0.6, 0.1, 0.3 });
+		userPrefs.setNiskieKosztyEksploatacji(new double[] { 0.5, 0.5 });
+		userPrefs.setDuzyZasieg(new double[] { 0.7, 0.3 });
+		userPrefs.setTypSilnika(new double[] { 0.2, 0.5, 0.3 });
+		userPrefs.setBagaznik(new double[] { 0.8, 0.1, 0.1 });
+		userPrefs.setWysokieOsiagi(new double[] { 0.3, 0.7 });
 		return userPrefs;
 	}
 
