@@ -124,12 +124,12 @@ public class CarAdvisorNetwork {
 		// czyli dla pierwszego wiersza to prawdopodobienstwa pod warunkiem
 		// Przeznaczenie = miasto, Nieskie_Koszty_Eksploatacji = tak
 
-		double[] miejskaTaniochaDef = { 0.2, 0.8, //
-				0.3, 0.7, //
-				0.4, 0.6, //
-				0.5, 0.5, //
+		double[] miejskaTaniochaDef = { 0.8, 0.2, //
+				0.7, 0.3, //
 				0.6, 0.4, //
-				0.7, 0.3 };
+				0.5, 0.5, //
+				0.4, 0.6, //
+				0.3, 0.7 };
 
 		net.setNodeDefinition("Miejska_Taniocha", miejskaTaniochaDef);
 
@@ -143,10 +143,10 @@ public class CarAdvisorNetwork {
 		net.addArc("Typ_Silnika", "Krotkie_Dojazdy");
 
 		double[] krotkieDojazdyDef = { 0.5, 0.5, //
-				0.4, 0.6, //
-				0.9, 0.1, //
-				0.3, 0.7, //
 				0.6, 0.4, //
+				0.1, 0.9, //
+				0.7, 0.3, //
+				0.4, 0.6, //
 				0.5, 0.5 };
 
 		net.setNodeDefinition("Krotkie_Dojazdy", krotkieDojazdyDef);
@@ -161,12 +161,12 @@ public class CarAdvisorNetwork {
 		net.addArc("Komfort_Jazdy", "Rodzinne");
 		net.addArc("Bagaznik", "Rodzinne");
 
-		double[] rodzinneDef = { 0.5, 0.5, /**/0.6, 0.4, /**/0.4, 0.6, /**/
-		0.5, 0.5, /**/0.7, 0.3, /**/0.5, 0.5, /**/
-		0.5, 0.5, /**/0.6, 0.4, /**/0.4, 0.6, /**/
-		0.5, 0.5, /**/0.7, 0.3, /**/0.5, 0.5, /**/
-		0.5, 0.5, /**/0.6, 0.4, /**/0.4, 0.6, /**/
-		0.5, 0.5, /**/0.7, 0.3, /**/0.5, 0.5 };
+		double[] rodzinneDef = { 0.5, 0.5, /**/0.4, 0.6, /**/0.6, 0.4, /**/
+		0.5, 0.5, /**/0.3, 0.7, /**/0.5, 0.5, /**/
+		0.5, 0.5, /**/0.4, 0.6, /**/0.6, 0.4, /**/
+		0.5, 0.5, /**/0.3, 0.7, /**/0.5, 0.5, /**/
+		0.5, 0.5, /**/0.4, 0.6, /**/0.6, 0.4, /**/
+		0.5, 0.5, /**/0.3, 0.7, /**/0.5, 0.5 };
 
 		net.setNodeDefinition("Rodzinne", rodzinneDef);
 
@@ -180,14 +180,14 @@ public class CarAdvisorNetwork {
 		net.addArc("Bogate_Wyposazenie", "Studencki_Standard");
 		net.addArc("Wysokie_Osiagi", "Studencki_Standard");
 
-		double[] studenckiStandardDef = { 0.2, 0.8, //
-				0.4, 0.6, //
+		double[] studenckiStandardDef = { 0.8, 0.2, //
+				0.6, 0.4, //
 				0.5, 0.5, //
 				0.5, 0.5, //
-				0.3, 0.7, //
-				0.9, 0.1, //
-				0.8, 0.2, //
-				0.6, 0.4 };
+				0.7, 0.3, //
+				0.1, 0.9, //
+				0.2, 0.8, //
+				0.4, 0.6 };
 
 		net.setNodeDefinition("Studencki_Standard", studenckiStandardDef);
 
@@ -200,10 +200,10 @@ public class CarAdvisorNetwork {
 		net.addArc("Bogate_Wyposazenie", "Zazdrosc_Sasiadow");
 		net.addArc("Wysokie_Osiagi", "Zazdrosc_Sasiadow");
 
-		double[] zazdroscSasiadowDef = { 0.2, 0.8, //
-				0.4, 0.6, //
+		double[] zazdroscSasiadowDef = { 0.8, 0.2, //
 				0.6, 0.4, //
-				0.7, 0.3 };
+				0.4, 0.6, //
+				0.3, 0.7 };
 
 		net.setNodeDefinition("Zazdrosc_Sasiadow", zazdroscSasiadowDef);
 
@@ -216,10 +216,10 @@ public class CarAdvisorNetwork {
 		net.addArc("Wysokie_Osiagi", "Szybka_Bestia");
 		net.addArc("Niskie_Koszty_Eksploatacji", "Szybka_Bestia");
 
-		double[] szybkaBestiaDef = { 0.1, 0.9, //
-				0.7, 0.3, //
-				0.5, 0.5, //
-				0.5, 0.5 };
+		double[] szybkaBestiaDef = { 0.75, 0.25, //
+				0.95, 0.05, //
+				0.1, 0.9, //
+				0.0, 1.0 };
 
 		net.setNodeDefinition("Szybka_Bestia", szybkaBestiaDef);
 
@@ -232,9 +232,9 @@ public class CarAdvisorNetwork {
 		net.addArc("Niskie_Koszty_Eksploatacji", "Dlugodystansowiec");
 		net.addArc("Duzy_Zasieg", "Dlugodystansowiec");
 
-		double[] dlugodystansowiecDef = { 0.1, 0.9, //
-				0.3, 0.7, //
-				0.9, 0.1, //
+		double[] dlugodystansowiecDef = { 0.9, 0.1, //
+				0.7, 0.3, //
+				0.1, 0.9, //
 				0.4, 0.6 };
 
 		net.setNodeDefinition("Dlugodystansowiec", dlugodystansowiecDef);
@@ -268,25 +268,25 @@ public class CarAdvisorNetwork {
 		net.deleteOutcome("Skoda_Citigo", 0);
 
 		net.addArc("Cena", "Skoda_Citigo");
+		net.addArc("Krotkie_Dojazdy", "Skoda_Citigo");
 		net.addArc("Liczba_Miejsc", "Skoda_Citigo");
 		net.addArc("Miejska_Taniocha", "Skoda_Citigo");
-		net.addArc("Krotkie_Dojazdy", "Skoda_Citigo");
 
 		// kolejne wiersze oddzielone /**/ jako ze jest duzo wartosci nie
 		// wypisalem tego pionowo
 		double[] skodaCitigoDef = { /**/
-		0.3, 0.7, /**/0.6, 0.4, /**/0.1, 0.9, /**/
-		0.5, 0.5, /**/0.8, 0.2, /**/0.4, 0.6, /**/
-		0.9, 0.1, /**/0.2, 0.8, /**/0.4, 0.6, /**/
-		0.3, 0.7, /**/0.6, 0.4, /**/0.1, 0.9, /**/
-		0.5, 0.5, /**/0.8, 0.2, /**/0.4, 0.6, /**/
-		0.9, 0.1, /**/0.2, 0.8, /**/0.4, 0.6, /**/
-		0.3, 0.7, /**/0.6, 0.4, /**/0.1, 0.9, /**/
-		0.5, 0.5, /**/0.8, 0.2, /**/0.4, 0.6, /**/
-		0.9, 0.1, /**/0.2, 0.8, /**/0.4, 0.6, /**/
-		0.3, 0.7, /**/0.6, 0.4, /**/0.1, 0.9, /**/
-		0.5, 0.5, /**/0.8, 0.2, /**/0.4, 0.6, /**/
-		0.9, 0.1, /**/0.2, 0.8, /**/0.4, 0.6 };
+		0.9, 0.1, /**/0.8, 0.2, /**/0.8, 0.2, /**/
+		0.7, 0.3, /**/0.6, 0.4, /**/0.4, 0.6, /**/
+		0.7, 0.3, /**/0.5, 0.5, /**/0.6, 0.4, /**/
+		0.4, 0.6, /**/0.4, 0.6, /**/0.3, 0.7, /**/
+		0.5, 0.5, /**/0.3, 0.7, /**/0.4, 0.6, /**/
+		0.5, 0.5, /**/0.2, 0.8, /**/0.1, 0.9, /**/
+		0.4, 0.6, /**/0.3, 0.7, /**/0.3, 0.7, /**/
+		0.2, 0.8, /**/0.2, 0.8, /**/0.1, 0.9, /**/
+		0.5, 0.5, /**/0.3, 0.7, /**/0.4, 0.6, /**/
+		0.3, 0.7, /**/0.3, 0.7, /**/0.2, 0.8, /**/
+		0.3, 0.7, /**/0.2, 0.8, /**/0.4, 0.6, /**/
+		0.2, 0.8, /**/0.1, 0.9, /**/0.1, 0.9 };
 
 		net.setNodeDefinition("Skoda_Citigo", skodaCitigoDef);
 
@@ -296,24 +296,24 @@ public class CarAdvisorNetwork {
 		net.deleteOutcome("Audi_Q5", 0);
 		net.deleteOutcome("Audi_Q5", 0);
 
-		net.addArc("Cena", "Audi_Q5");
 		net.addArc("Komfort_Jazdy", "Audi_Q5");
 		net.addArc("Bogate_Wyposazenie", "Audi_Q5");
 		net.addArc("Przeznaczenie", "Audi_Q5");
+		net.addArc("Cena", "Audi_Q5");
 
 		double[] audiQ5Def = { /**/
-		0.5, 0.5, /**/0.3, 0.7, /**/0.9, 0.1, /**/
-		0.2, 0.8, /**/0.8, 0.2, /**/0.4, 0.6, /**/
-		0.7, 0.3, /**/0.5, 0.5, /**/0.4, 0.6, /**/
-		0.5, 0.5, /**/0.3, 0.7, /**/0.9, 0.1, /**/
-		0.2, 0.8, /**/0.8, 0.2, /**/0.4, 0.6, /**/
-		0.7, 0.3, /**/0.5, 0.5, /**/0.4, 0.6, /**/
-		0.5, 0.5, /**/0.3, 0.7, /**/0.9, 0.1, /**/
-		0.2, 0.8, /**/0.8, 0.2, /**/0.4, 0.6, /**/
-		0.7, 0.3, /**/0.5, 0.5, /**/0.4, 0.6, /**/
-		0.5, 0.5, /**/0.3, 0.7, /**/0.9, 0.1, /**/
-		0.2, 0.8, /**/0.8, 0.2, /**/0.4, 0.6, /**/
-		0.7, 0.3, /**/0.5, 0.5, /**/0.4, 0.6 };
+		0.1, 0.9, /**/0.3, 0.7, /**/0.55, 0.45, /**/
+		0.05, 0.95, /**/0.35, 0.65, /**/0.5, 0.5, /**/
+		0.05, 0.95, /**/0.15, 0.85, /**/0.45, 0.55, /**/
+		0.0, 1.0, /**/0.1, 0.9, /**/0.35, 0.65, /**/
+		0.15, 0.85, /**/0.35, 0.65, /**/0.8, 0.2, /**/
+		0.1, 0.9, /**/0.3, 0.7, /**/0.6, 0.4, /**/
+		0.1, 0.9, /**/0.35, 0.65, /**/0.7, 0.3, /**/
+		0.05, 0.95, /**/0.15, 0.85, /**/0.35, 0.65, /**/
+		0.15, 0.85, /**/0.45, 0.55, /**/0.95, 0.05, /**/
+		0.1, 0.9, /**/0.4, 0.6, /**/0.85, 0.15, /**/
+		0.1, 0.9, /**/0.35, 0.65, /**/0.65, 0.35, /**/
+		0.05, 0.95, /**/0.25, 0.75, /**/0.5, 0.5 };
 
 		net.setNodeDefinition("Audi_Q5", audiQ5Def);
 
@@ -323,24 +323,24 @@ public class CarAdvisorNetwork {
 		net.deleteOutcome("Ford_Focus_ST", 0);
 		net.deleteOutcome("Ford_Focus_ST", 0);
 
-		net.addArc("Cena", "Ford_Focus_ST");
 		net.addArc("Szybka_Bestia", "Ford_Focus_ST");
 		net.addArc("Typ_Silnika", "Ford_Focus_ST");
+		net.addArc("Cena", "Ford_Focus_ST");
 		net.addArc("Dlugodystansowiec", "Ford_Focus_ST");
 
 		double[] fordFocusSTDef = { /**/
-		0.9, 0.1, /**/0.6, 0.4, /**/0.2, 0.8, /**/
-		0.5, 0.5, /**/0.3, 0.7, /**/0.4, 0.6, /**/
-		0.9, 0.1, /**/0.6, 0.4, /**/0.2, 0.8, /**/
-		0.5, 0.5, /**/0.3, 0.7, /**/0.4, 0.6, /**/
-		0.9, 0.1, /**/0.6, 0.4, /**/0.2, 0.8, /**/
-		0.5, 0.5, /**/0.3, 0.7, /**/0.4, 0.6, /**/
-		0.9, 0.1, /**/0.6, 0.4, /**/0.2, 0.8, /**/
-		0.5, 0.5, /**/0.3, 0.7, /**/0.4, 0.6, /**/
-		0.9, 0.1, /**/0.6, 0.4, /**/0.2, 0.8, /**/
-		0.5, 0.5, /**/0.3, 0.7, /**/0.4, 0.6, /**/
-		0.9, 0.1, /**/0.6, 0.4, /**/0.2, 0.8, /**/
-		0.5, 0.5, /**/0.3, 0.7, /**/0.4, 0.6, /**/};
+		0.2, 0.8, /**/0.3, 0.7, /**/0.25, 0.75, /**/
+		0.3, 0.7, /**/0.95, 0.05, /**/0.9, 0.1, /**/
+		0.1, 0.9, /**/0.1, 0.9, /**/0.1, 0.9, /**/
+		0.1, 0.9, /**/0.1, 0.9, /**/0.1, 0.9, /**/
+		0.1, 0.9, /**/0.1, 0.9, /**/0.1, 0.9, /**/
+		0.1, 0.9, /**/0.1, 0.9, /**/0.1, 0.9, /**/
+	    0.1, 0.9, /**/0.1, 0.9, /**/0.1, 0.9, /**/
+		0.1, 0.9, /**/0.1, 0.9, /**/0.1, 0.9, /**/
+		0.1, 0.9, /**/0.1, 0.9, /**/0.1, 0.9, /**/
+		0.1, 0.9, /**/0.1, 0.9, /**/0.1, 0.9, /**/
+		0.1, 0.9, /**/0.1, 0.9, /**/0.1, 0.9, /**/
+		0.1, 0.9, /**/0.1, 0.9, /**/0.1, 0.9, /**/};
 
 		net.setNodeDefinition("Ford_Focus_ST", fordFocusSTDef);
 
@@ -351,23 +351,23 @@ public class CarAdvisorNetwork {
 		net.deleteOutcome("Lexus_CT_200H", 0);
 
 		net.addArc("Cena", "Lexus_CT_200H");
+		net.addArc("Eko", "Lexus_CT_200H");
 		net.addArc("Bogate_Wyposazenie", "Lexus_CT_200H");
 		net.addArc("Bagaznik", "Lexus_CT_200H");
-		net.addArc("Eko", "Lexus_CT_200H");
 
 		double[] lexusCT200HDef = { /**/
-		0.6, 0.4, /**/0.6, 0.4, /**/0.1, 0.9, /**/
-		0.8, 0.2, /**/0.7, 0.3, /**/0.2, 0.8, /**/
-		0.6, 0.4, /**/0.6, 0.4, /**/0.1, 0.9, /**/
-		0.8, 0.2, /**/0.7, 0.3, /**/0.2, 0.8, /**/
-		0.6, 0.4, /**/0.6, 0.4, /**/0.1, 0.9, /**/
-		0.8, 0.2, /**/0.7, 0.3, /**/0.2, 0.8, /**/
-		0.6, 0.4, /**/0.6, 0.4, /**/0.1, 0.9, /**/
-		0.8, 0.2, /**/0.7, 0.3, /**/0.2, 0.8, /**/
-		0.6, 0.4, /**/0.6, 0.4, /**/0.1, 0.9, /**/
-		0.8, 0.2, /**/0.7, 0.3, /**/0.2, 0.8, /**/
-		0.6, 0.4, /**/0.6, 0.4, /**/0.1, 0.9, /**/
-		0.8, 0.2, /**/0.7, 0.3, /**/0.2, 0.8, /**/
+		0.25, 0.75, /**/0.3, 0.7, /**/0.25, 0.75, /**/
+		0.15, 0.85, /**/0.25, 0.75, /**/0.15, 0.85, /**/
+		0.15, 0.85, /**/0.25, 0.75, /**/0.15, 0.85, /**/
+		0.0, 1.0, /**/0.1, 0.9, /**/0.0, 1.0, /**/
+		0.6, 0.4, /**/0.7, 0.3, /**/0.4, 0.6, /**/
+		0.5, 0.5, /**/0.6, 0.4, /**/0.4, 0.6, /**/
+		0.4, 0.6, /**/0.5, 0.5, /**/0.3, 0.7, /**/
+		0.35, 0.65, /**/0.45, 0.55, /**/0.25, 0.75, /**/
+		0.85, 0.15, /**/1.0, 0.0, /**/0.8, 0.2, /**/
+		0.6, 0.4, /**/0.75, 0.25, /**/0.5, 0.5, /**/
+		0.35, 0.65, /**/0.7, 0.3, /**/0.45, 0.55, /**/
+		0.3, 0.7, /**/0.65, 0.35, /**/0.2, 0.8, /**/
 		};
 
 		net.setNodeDefinition("Lexus_CT_200H", lexusCT200HDef);
