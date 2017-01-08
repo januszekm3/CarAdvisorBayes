@@ -397,18 +397,18 @@ public class CarAdvisorNetwork {
 	}
 
 	private void setInputNodesDefinitions(UserPreferences userPrefs) {
-		net.setNodeDefinition("Cena", userPrefs.getCenaDef());
-		net.setNodeDefinition("Komfort_Jazdy", userPrefs.getKomfortJazdyDef());
+		net.setNodeDefinition("Cena", userPrefs.getCena());
+		net.setNodeDefinition("Komfort_Jazdy", userPrefs.getKomfortJazdy());
 		net.setNodeDefinition("Bogate_Wyposazenie",
-				userPrefs.getBogateWyposazenieDef());
-		net.setNodeDefinition("Przeznaczenie", userPrefs.getPrzeznaczenieDef());
-		net.setNodeDefinition("Liczba_Miejsc", userPrefs.getLiczbaMiejscDef());
+				userPrefs.getBogateWyposazenie());
+		net.setNodeDefinition("Przeznaczenie", userPrefs.getPrzeznaczenie());
+		net.setNodeDefinition("Liczba_Miejsc", userPrefs.getLiczbaMiejsc());
 		net.setNodeDefinition("Niskie_Koszty_Eksploatacji",
-				userPrefs.getNiskieKosztyEksploatacjiDef());
-		net.setNodeDefinition("Duzy_Zasieg", userPrefs.getDuzyZasiegDef());
-		net.setNodeDefinition("Typ_Silnika", userPrefs.getTypSilnikaDef());
-		net.setNodeDefinition("Bagaznik", userPrefs.getBagaznikDef());
-		net.setNodeDefinition("Wysokie_Osiagi", userPrefs.getWysokieOsiagiDef());
+				userPrefs.getNiskieKosztyEksploatacji());
+		net.setNodeDefinition("Duzy_Zasieg", userPrefs.getDuzyZasieg());
+		net.setNodeDefinition("Typ_Silnika", userPrefs.getTypSilnika());
+		net.setNodeDefinition("Bagaznik", userPrefs.getBagaznik());
+		net.setNodeDefinition("Wysokie_Osiagi", userPrefs.getWysokieOsiagi());
 		net.updateBeliefs();
 	}
 

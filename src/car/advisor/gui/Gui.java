@@ -6,6 +6,7 @@ import java.util.Hashtable;
 import javax.swing.*;
 
 import car.advisor.model.UserPreferences;
+import car.advisor.network.CarAdvisorNetwork;
 
 /**
  * Created by Janusz on 07-01-2017.
@@ -13,10 +14,11 @@ import car.advisor.model.UserPreferences;
 public class Gui {
 
     public static void main(String[] args) {
-        Gui.run();
+        CarAdvisorNetwork carAdvisorNetwork = new CarAdvisorNetwork();
+        Gui.run(carAdvisorNetwork);
     }
 
-    private static void run() {
+    private static void run (CarAdvisorNetwork carAdvisorNetwork) {
 
         Hashtable labelTable = new Hashtable();
         for (int i = 0; i < 101; i += 20)
@@ -237,6 +239,8 @@ public class Gui {
                     bagaznikPraktycznyJSlider.getValue() / sum, bagaznikObszernyJSlider.getValue() / sum});
             preferences.setWysokieOsiagi(new double[] { wysokieOsiagiJSlider.getValue()/100.0,
                     1 - wysokieOsiagiJSlider.getValue()/100.0});
+            String chosenCars = carAdvisorNetwork.getBestMatches(preferences);
+            JOptionPane.showMessageDialog(frame, chosenCars);
         });
     }
 }
