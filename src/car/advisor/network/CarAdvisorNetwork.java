@@ -1,5 +1,7 @@
 package car.advisor.network;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -390,8 +392,9 @@ public class CarAdvisorNetwork {
 		carCompatibilities.sort(Comparator.comparing(
 				CarCompatibility::getCompatibility).reversed());
 		for (CarCompatibility carCompatibility : carCompatibilities) {
-			bestMatches.append(carCompatibility.getName() + " : "
-					+ carCompatibility.getCompatibility() + "\n");
+			bestMatches.append(carCompatibility.getName() + ": "
+					+ BigDecimal.valueOf(100*carCompatibility.getCompatibility())
+                    .setScale(2, RoundingMode.HALF_UP).doubleValue() + "%\n");
 		}
 		return bestMatches.toString();
 	}
@@ -411,5 +414,4 @@ public class CarAdvisorNetwork {
 		net.setNodeDefinition("Wysokie_Osiagi", userPrefs.getWysokieOsiagi());
 		net.updateBeliefs();
 	}
-
 }
