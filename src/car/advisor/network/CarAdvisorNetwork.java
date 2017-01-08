@@ -14,7 +14,7 @@ import car.advisor.model.UserPreferences;
 public class CarAdvisorNetwork {
 
 	private List<String> models = Arrays.asList("Skoda_Citigo", "Audi_Q5",
-			"Ford_Focus_ST", "Lexus_CT_200H");
+			"Ford_Focus_ST", "Lexus_CT_200H", "Tesla_S", "Skoda_Octavia", "Fiat_Tipo");
 
 	private Network net;
 
@@ -371,6 +371,70 @@ public class CarAdvisorNetwork {
 		};
 
 		net.setNodeDefinition("Lexus_CT_200H", lexusCT200HDef);
+
+		net.addNode(Network.NodeType.Cpt, "Tesla_S");
+		net.addOutcome("Tesla_S", "tak");
+		net.addOutcome("Tesla_S", "nie");
+		net.deleteOutcome("Tesla_S", 0);
+		net.deleteOutcome("Tesla_S", 0);
+
+		net.addArc("Cena", "Tesla_S");
+		net.addArc("Eko", "Tesla_S");
+		net.addArc("Bogate_Wyposazenie", "Tesla_S");
+		net.addArc("Wysokie_Osiagi", "Tesla_S");
+
+		double[] teslaDef = { /**/
+				0.1, 0.9, /**/0.1, 0.9, /**/0.1, 0.9, /**/
+				0.1, 0.9, /**/0.1, 0.9, /**/0.1, 0.9, /**/
+				0.1, 0.9, /**/0.0, 1.0, /**/0.2, 0.8, /**/
+				0.15, 0.85, /**/0.15, 0.85, /**/0.1, 0.9, /**/
+				0.1, 0.9, /**/0.1, 0.9, /**/0.1, 0.9, /**/
+				0.1, 0.9, /**/1.0, 0.0, /**/0.8, 0.2, /**/
+				0.9, 0.1, /**/0.7, 0.3, /**/0.8, 0.2, /**/
+				0.65, 0.35, /**/0.65, 0.35, /**/0.3, 0.7, /**/
+		};
+
+		net.setNodeDefinition("Tesla_S", teslaDef);
+
+		net.addNode(Network.NodeType.Cpt, "Skoda_Octavia");
+		net.addOutcome("Skoda_Octavia", "tak");
+		net.addOutcome("Skoda_Octavia", "nie");
+		net.deleteOutcome("Skoda_Octavia", 0);
+		net.deleteOutcome("Skoda_Octavia", 0);
+
+		net.addArc("Cena", "Skoda_Octavia");
+		net.addArc("Bagaznik", "Skoda_Octavia");
+		net.addArc("Dlugodystansowiec", "Skoda_Octavia");
+
+		double[] skodaOctaviaDef = {
+				0.3, 0.7, /**/0.0, 1.0, /**/0.6, 0.4, /**/
+				0.4, 0.6, /**/0.6, 0.4, /**/0.4, 0.6, /**/
+				0.6, 0.4, /**/0.4, 0.6, /**/0.9, 0.1, /**/
+				0.75, 0.25, /**/1.0, 0.0, /**/0.85, 0.15, /**/
+				0.3, 0.7, /**/0.15, 0.85, /**/0.7, 0.3, /**/
+				0.5, 0.5, /**/0.75, 0.25, /**/0.5, 0.5, /**/
+		};
+
+		net.setNodeDefinition("Skoda_Octavia", skodaOctaviaDef);
+
+		net.addNode(Network.NodeType.Cpt, "Fiat_Tipo");
+		net.addOutcome("Fiat_Tipo", "tak");
+		net.addOutcome("Fiat_Tipo", "nie");
+		net.deleteOutcome("Fiat_Tipo", 0);
+		net.deleteOutcome("Fiat_Tipo", 0);
+
+		net.addArc("Cena", "Fiat_Tipo");
+		net.addArc("Rodzinne", "Fiat_Tipo");
+		net.addArc("Dlugodystansowiec", "Fiat_Tipo");
+
+		double[] fiatTipoDef = {
+				0.5, 0.5, /**/0.5, 0.5, /**/0.3, 0.7, /**/
+				0.3, 0.7, /**/0.9, 0.1, /**/0.75, 0.25, /**/
+				0.6, 0.4, /**/0.4, 0.6, /**/0.2, 0.8, /**/
+				0.1, 0.9, /**/0.2, 0.8, /**/0.0, 1.0
+		};
+
+		net.setNodeDefinition("Fiat_Tipo", fiatTipoDef);
 	}
 
 	public String getBestMatches(UserPreferences userPrefs) {
