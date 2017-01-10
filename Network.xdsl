@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!-- This network was created in GeNIe Academic, which can be used for educational and research purposes only -->
+<smile version="1.0" id="Network1" numsamples="1000" discsamples="10000">
+	<nodes>
+		<cpt id="liczba_miejsc">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="cena">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="typ_silnika">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="komfort">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="wyposazenie">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="koszty_eksploatacji">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="osiagi">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="szybka_bestia">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>koszty_eksploatacji osiagi</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="zsieg">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="dlugo_systansowiec">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>zsieg koszty_eksploatacji</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="focust_st">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>szybka_bestia typ_silnika cena dlugo_systansowiec</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="bagaznik">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="przeznaczenie">
+			<state id="State0" />
+			<state id="State1" />
+			<probabilities>0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="miejska_taniocha">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>koszty_eksploatacji przeznaczenie</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="rodzinne">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>bagaznik komfort liczba_miejsc</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="eko">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>dlugo_systansowiec typ_silnika</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="krotkie_dojazdy">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>typ_silnika zsieg</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="student">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>wyposazenie komfort osiagi</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="zazdrosc">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>osiagi wyposazenie</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="skoda_citigo">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>cena krotkie_dojazdy liczba_miejsc miejska_taniocha</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="audi_q5">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>przeznaczenie komfort wyposazenie cena</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+		<cpt id="lexus_ct_200h">
+			<state id="State0" />
+			<state id="State1" />
+			<parents>cena eko wyposazenie bagaznik</parents>
+			<probabilities>0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5 0.5</probabilities>
+		</cpt>
+	</nodes>
+	<extensions>
+		<genie version="1.0" app="GeNIe 2.1.1104.0 ACADEMIC" name="Network1" faultnameformat="nodestate">
+			<node id="liczba_miejsc">
+				<name>Liczba miejsc ( 5-, 5, 5+ )</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>432 52 570 137</position>
+			</node>
+			<node id="cena">
+				<name>Cena ( mala, srednia, duza )</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>268 46 418 140</position>
+			</node>
+			<node id="typ_silnika">
+				<name>Typ Silnika ( benzyna, diesel, hybryda )</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>1561 50 1704 132</position>
+			</node>
+			<node id="komfort">
+				<name>Komfort Jazdy ( tak, nie )</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>578 56 719 133</position>
+			</node>
+			<node id="wyposazenie">
+				<name>Bogate Wyposazenie ( tak, nie )</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>726 62 877 136</position>
+			</node>
+			<node id="bagaznik">
+				<name>Bagaznik ( maly, praktyczny, obszerny )</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>888 56 1011 128</position>
+			</node>
+			<node id="osiagi">
+				<name>Wysokie Osiagi ( tak, nie )</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>1012 56 1124 128</position>
+			</node>
+			<node id="przeznaczenie">
+				<name>Przeznaczenie ( miasto, miasto+trasa, miasto+trasa+teren )</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>1127 54 1276 130</position>
+			</node>
+			<node id="koszty_eksploatacji">
+				<name>Niskie Koszty Eksploatacji ( tak ,nie )</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>1282 53 1422 127</position>
+			</node>
+			<node id="zsieg">
+				<name>Duzy Zasieg ( tak ,nie )</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>1427 56 1550 120</position>
+			</node>
+			<node id="miejska_taniocha">
+				<name>Miejska Taniocha</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>1309 336 1437 418</position>
+			</node>
+			<node id="szybka_bestia">
+				<name>Szybka Bestia</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>1108 334 1234 416</position>
+			</node>
+			<node id="rodzinne">
+				<name>Rodzinne</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>471 335 595 410</position>
+			</node>
+			<node id="dlugo_systansowiec">
+				<name>Dlugodystansowiec</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>1498 343 1627 420</position>
+			</node>
+			<node id="eko">
+				<name>Eko</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>1579 607 1698 682</position>
+			</node>
+			<node id="krotkie_dojazdy">
+				<name>Krótkie dojazdy</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>1678 348 1785 422</position>
+			</node>
+			<node id="student">
+				<name>Studencki Standard</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>681 347 810 423</position>
+			</node>
+			<node id="zazdrosc">
+				<name>Zazdrosc Sasiadów</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>904 341 1033 419</position>
+			</node>
+			<node id="skoda_citigo">
+				<name>Skoda Citigo</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>308 765 443 847</position>
+			</node>
+			<node id="focust_st">
+				<name>Ford Focus ST</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>686 774 805 856</position>
+			</node>
+			<node id="audi_q5">
+				<name>Audi Q5</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>930 766 1051 854</position>
+			</node>
+			<node id="lexus_ct_200h">
+				<name>Lexus CT 200H</name>
+				<interior color="e5f6f7" />
+				<outline color="000080" />
+				<font color="000000" name="Arial" size="7" />
+				<position>1232 766 1367 851</position>
+			</node>
+		</genie>
+	</extensions>
+</smile>
